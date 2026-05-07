@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LibreOffice vs Microsoft Office on Windows — Features, Compatibility, Pricing</title>
+  <meta name="description" content="Compare LibreOffice and Microsoft Office on Windows: features, compatibility with DOCX/XLSX/PPTX, offline use, pricing, privacy. Download the official LibreOffice MSI (64‑bit).">
+  <link rel="canonical" href="https://libreoffice-app.github.io/libreoffice-vs-microsoft-office-windows.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="LibreOffice vs Microsoft Office on Windows">
+  <meta property="og:description" content="A practical comparison: features, file compatibility, offline/online use and pricing. Get the LibreOffice MSI (64‑bit).">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://libreoffice-app.github.io/libreoffice-vs-microsoft-office-windows.html">
+  <meta property="og:image" content="/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#18A303">
+  <meta name="last-modified" content="">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <style>
+    :root{
+      --brand:#18A303;
+      --brand-dark:#0f7c00;
+      --bg:#ffffff;
+      --muted:#6b7280;
+      --text:#0b0b0b;
+      --max-width:1100px;
+      --radius:12px;
+      --focus-outline:3px solid #111;
+    }
+    html,body{height:100%}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.5;color:var(--text);background:var(--bg)}
+    .container{max-width:var(--max-width);margin:0 auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+    .brand svg{width:42px;height:42px}
+    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:12px;flex-wrap:wrap}
+    nav a{color:var(--text);text-decoration:none;padding:8px 10px;border-radius:8px}
+    nav a:hover,nav a:focus{background:#f3f4f6;outline:none}
+    main{padding:18px 0}
+    h1{margin:0 0 8px 0;font-size:1.8rem}
+    .lead{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:3fr 1.4fr;gap:28px;align-items:start}
+    .card{background:#fff;border:1px solid #e6e6e6;padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(16,24,40,0.04)}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:10px;background:var(--brand);color:#fff;font-weight:600;border:0;cursor:pointer;text-decoration:none}
+    .btn.secondary{background:transparent;color:var(--brand);border:1px solid rgba(24,163,3,0.2)}
+    .btn:focus{outline:var(--focus-outline);outline-offset:3px}
+    .meta{color:var(--muted)}
+    .compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .compare .box{border:1px solid #e6e6e6;border-radius:12px;padding:12px}
+    .tick{color:var(--brand);font-weight:700}
+    .x{color:#b91c1c;font-weight:700}
+    .list{margin:0;padding-left:18px}
+    footer{margin-top:26px;padding:16px 0;border-top:1px solid #eee;color:var(--muted);font-size:0.9rem}
+    .badge{display:inline-block;background:#f0fdf4;color:var(--brand);padding:6px 10px;border-radius:999px;font-weight:600}
+    /* cookie banner */
+    .cookie-banner{position:fixed;left:12px;right:12px;bottom:12px;background:#fff;border:1px solid #ddd;padding:14px;border-radius:12px;display:flex;gap:12px;align-items:center;box-shadow:0 10px 30px rgba(2,6,23,0.08);z-index:9999}
+    .cookie-actions{margin-left:auto;display:flex;gap:8px}
+    .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}.compare{grid-template-columns:1fr}}
+  </style>
+
+  <!-- SVG symbols -->
+  <svg aria-hidden="true" style="display:none">
+    <symbol id="icon-logo" viewBox="0 0 48 48">
+      <rect width="48" height="48" rx="8" fill="#18A303"></rect>
+      <path d="M14 31l20-14v12L14 31z" fill="#fff"></path>
+    </symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3v10m0 0l4-4m-4 4l-4-4M4 21h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-windows" viewBox="0 0 24 24"><path fill="currentColor" d="M3 3l8-1v9H3V3zm10 0l8-1v9h-8V3zM3 13l8-1v9H3v-8zm10-1l8-1v9h-8v-8z"/></symbol>
+    <symbol id="icon-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M11 10h2v6h-2zM12 7.5a.9.9 0 110 1.8.9.9 0 010-1.8z" fill="currentColor"/></symbol>
+  </svg>
+
+  <!-- GA4 with default denied consent -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PDSRQT93TT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments)}
+    gtag('consent','default',{'analytics_storage':'denied'});
+    gtag('js', new Date());
+    gtag('config','G-PDSRQT93TT', { 'anonymize_ip': true });
+  </script>
+
+  <!-- JSON-LD: WebSite, Organization, Breadcrumb, Article, SoftwareApplication (2), FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://libreoffice-app.github.io/#website",
+        "url": "https://libreoffice-app.github.io/",
+        "name": "LibreOffice App — Windows Downloads & Guides",
+        "publisher": { "@id": "https://libreoffice-app.github.io/#org" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://libreoffice-app.github.io/#org",
+        "name": "LibreOffice App",
+        "url": "https://libreoffice-app.github.io/",
+        "logo": "https://libreoffice-app.github.io/favicon.svg"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://libreoffice-app.github.io/"},
+          {"@type": "ListItem", "position": 2, "name": "LibreOffice vs Microsoft Office", "item": "https://libreoffice-app.github.io/libreoffice-vs-microsoft-office-windows.html"}
+        ]
+      },
+      {
+        "@type": "Article",
+        "headline": "LibreOffice vs Microsoft Office on Windows — Features, Compatibility, Pricing",
+        "description": "A practical comparison between LibreOffice and Microsoft Office on Windows: features, DOCX/XLSX/PPTX compatibility, offline vs online usage, pricing and privacy.",
+        "author": {"@type":"Organization","name":"LibreOffice App"},
+        "dateModified": "2026-05-07",
+        "mainEntityOfPage": "https://libreoffice-app.github.io/libreoffice-vs-microsoft-office-windows.html"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "LibreOffice",
+        "operatingSystem": "Windows 11, Windows 10 (64-bit)",
+        "applicationCategory": "OfficeApplication",
+        "softwareVersion": "26.2.2",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0.00", "priceCurrency": "USD" },
+        "downloadUrl": "https://de.libreoffice.org/donate/dl/win-x86_64/26.2.2/de/LibreOffice_26.2.2_Win_x86-64.msi",
+        "publisher": {"@type":"Organization","name":"The Document Foundation"}
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Microsoft Office (Microsoft 365 Apps)",
+        "operatingSystem": "Windows 11, Windows 10",
+        "applicationCategory": "OfficeApplication",
+        "isAccessibleForFree": false,
+        "offers": { "@type": "Offer", "price": "Varies", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"Is LibreOffice compatible with DOCX, XLSX, and PPTX?","acceptedAnswer":{"@type":"Answer","text":"Yes. LibreOffice opens and saves Microsoft Office formats including DOCX, XLSX, and PPTX. For best fidelity, DOCX is generally well supported, while complex Excel/PowerPoint macros may require adjustments."}},
+          {"@type":"Question","name":"Do I need a subscription for LibreOffice?","acceptedAnswer":{"@type":"Answer","text":"No. LibreOffice is free and open‑source. Microsoft 365 typically requires a paid subscription."}},
+          {"@type":"Question","name":"Which is better for offline use?","acceptedAnswer":{"@type":"Answer","text":"LibreOffice is fully functional offline by default. Microsoft Office apps also work offline, but some features and cloud integrations require a Microsoft account and internet access."}},
+          {"@type":"Question","name":"Can Microsoft Office open ODF files?","acceptedAnswer":{"@type":"Answer","text":"Yes. Modern Microsoft Office versions can open ODF formats (ODT, ODS, ODP), though features may vary by version."}}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="brand" href="index.html" aria-label="LibreOffice App home">
+        <svg width="42" height="42" aria-hidden="true"><use href="#icon-logo"></use></svg>
+        <div>
+          <strong>LibreOffice App</strong><br>
+          <span style="font-size:0.85rem;color:var(--muted)">Windows Downloads & Guides</span>
+        </div>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Download</a></li>
+          <li><a href="windows-install-guide.html">Install Guide</a></li>
+          <li><a href="windows-offline-installer.html">Offline Installer</a></li>
+          <li><a href="windows-installation-errors.html">Troubleshooting</a></li>
+          <li><a href="libreoffice-vs-microsoft-office-windows.html" aria-current="page">LibreOffice vs MS Office</a></li>
+          <li><a href="extensions-templates-windows.html">Extensions & Templates</a></li>
+          <li><a href="portable-windows.html">Portable</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>LibreOffice vs Microsoft Office on Windows</h1>
+      <p class="lead">A practical comparison for Windows users: core apps, file compatibility, offline use, pricing and privacy. Prefer a free, offline‑friendly suite? Try LibreOffice.</p>
+
+      <div class="grid">
+        <section class="card">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+            <div class="meta">Download LibreOffice (MSI, 64‑bit): <code>LibreOffice_26.2.2_Win_x86-64.msi</code> • Size: <span id="file-size">—</span></div>
+            <div>
+              <a class="btn" href="https://de.libreoffice.org/donate/dl/win-x86_64/26.2.2/de/LibreOffice_26.2.2_Win_x86-64.msi" onclick="handleDownload('LibreOffice_26.2.2_Win_x86-64.msi','https://de.libreoffice.org/donate/dl/win-x86_64/26.2.2/de/LibreOffice_26.2.2_Win_x86-64.msi'); return false;">
+                <svg width="16" height="16" aria-hidden><use href="#icon-download"></use></svg>
+                Download MSI (64‑bit)
+              </a>
+              <a class="btn secondary" href="index.html">Back to Download page</a>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:14px">
+            <h2 style="margin:0 0 6px 0;font-size:1.15rem">Quick verdict</h2>
+            <p class="meta">• LibreOffice is <strong>free</strong>, open‑source and works great <strong>offline</strong>. It handles ODF natively and supports Microsoft formats.<br>• Microsoft Office (Microsoft 365) offers tight cloud integration and enterprise collaboration, but typically requires a <strong>subscription</strong>.</p>
+          </div>
+
+          <div class="card" style="margin-top:14px">
+            <h2 style="margin:0 0 6px 0;font-size:1.15rem">Core apps</h2>
+            <div class="compare">
+              <div class="box">
+                <strong>LibreOffice</strong>
+                <ul class="list meta">
+                  <li>Writer (word processor)</li>
+                  <li>Calc (spreadsheets)</li>
+                  <li>Impress (presentations)</li>
+                  <li>Draw (vector graphics)</li>
+                  <li>Base (database)</li>
+                  <li>Math (formulas)</li>
+                </ul>
+              </div>
+              <div class="box">
+                <strong>Microsoft Office</strong>
+                <ul class="list meta">
+                  <li>Word</li>
+                  <li>Excel</li>
+                  <li>PowerPoint</li>
+                  <li>OneNote</li>
+                  <li>Access (select plans)</li>
+                  <li>Outlook (select plans)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:14px">
+            <h2 style="margin:0 0 6px 0;font-size:1.15rem">File compatibility (Windows)</h2>
+            <ul class="list meta">
+              <li>LibreOffice opens/saves <strong>DOCX, XLSX, PPTX</strong>. Complex macros and proprietary features may need adjustments.</li>
+              <li>LibreOffice uses <strong>ODF</strong> (OpenDocument) as default. Microsoft Office can open ODF but support varies by version.</li>
+              <li>Both suites export to <strong>PDF</strong>.</li>
+            </ul>
+          </div>
+
+          <div class="card" style="margin-top:14px">
+            <h2 style="margin:0 0 6px 0;font-size:1.15rem">Pricing and licensing</h2>
+            <ul class="list meta">
+              <li><strong>LibreOffice</strong>: free and open‑source. No subscriptions, no in‑app purchases.</li>
+              <li><strong>Microsoft Office (Microsoft 365)</strong>: typically requires a paid subscription. Perpetual licenses may exist but vary by edition and availability.</li>
+            </ul>
+          </div>
+
+          <div class="card" style="margin-top:14px">
+            <h2 style="margin:0 0 6px 0;font-size:1.15rem">Offline vs online use</h2>
+            <ul class="list meta">
+              <li><strong>LibreOffice</strong>: full functionality offline. No account required.</li>
+              <li><strong>Microsoft Office</strong>: desktop apps work offline, but cloud features (OneDrive, real‑time collaboration) require an account and internet.</li>
+            </ul>
+          </div>
+
+          <div class="card" style="margin-top:14px">
+            <h2 style="margin:0 0 6px 0;font-size:1.15rem">Privacy and control</h2>
+            <ul class="list meta">
+              <li>LibreOffice stores files locally by default; no mandatory cloud sync.</li>
+              <li>Microsoft 365 emphasizes cloud connectivity; review privacy settings if required by your organization.</li>
+            </ul>
+          </div>
+
+          <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn" href="https://de.libreoffice.org/donate/dl/win-x86_64/26.2.2/de/LibreOffice_26.2.2_Win_x86-64.msi" onclick="handleDownload('LibreOffice_26.2.2_Win_x86-64.msi','https://de.libreoffice.org/donate/dl/win-x86_64/26.2.2/de/LibreOffice_26.2.2_Win_x86-64.msi'); return false;">
+              <svg width="16" height="16" aria-hidden><use href="#icon-download"></use></svg>
+              Download LibreOffice (MSI, 64‑bit)
+            </a>
+            <a class="btn secondary" href="windows-install-guide.html">How to install</a>
+            <a class="btn secondary" href="extensions-templates-windows.html">Extensions & templates</a>
+          </div>
+        </section>
+
+        <aside class="card">
+          <h3 style="margin:0 0 6px 0">Highlights</h3>
+          <ul class="list meta">
+            <li>Free and open‑source office suite</li>
+            <li>Works great offline on Windows 10 & 11</li>
+            <li>Opens DOCX/XLSX/PPTX; exports PDF</li>
+            <li>Optional extensions and templates</li>
+          </ul>
+          <hr style="border:none;border-top:1px solid #eee;margin:12px 0">
+          <p class="meta">Need help? See <a href="windows-installation-errors.html">Troubleshooting</a> or <a href="windows-offline-installer.html">Offline Installer</a>.</p>
+          <p class="meta">File size: <span id="file-size-aside">—</span></p>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+          <span class="badge">Free & Open Source</span>
+          <span class="meta">Not affiliated with The Document Foundation. Links point to official LibreOffice servers.</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+          <div class="meta">&copy; <span id="year"></span> LibreOffice App — Hosted on GitHub Pages</div>
+          <div class="meta">Last updated: <time id="last-updated">—</time></div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Cookie banner -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent" style="display:none">
+    <div>
+      <strong>We respect your privacy</strong>
+      <div class="meta" style="margin-top:6px">This site uses minimal analytics to measure installs and improve the experience. You can accept or decline.</div>
+    </div>
+    <div class="cookie-actions">
+      <button id="cookie-accept" class="btn">Accept</button>
+      <button id="cookie-decline" class="btn secondary">Decline</button>
+      <button id="cookie-close" aria-label="Close cookie banner" class="btn" style="background:#eee;color:#111">Close</button>
+    </div>
+  </div>
+
+  <script>
+    // Footer dates and meta last-modified
+    document.getElementById('year').textContent = new Date().getFullYear();
+    (function(){
+      var lm = document.lastModified || new Date().toISOString().split('T')[0];
+      document.getElementById('last-updated').textContent = lm;
+      var meta = document.querySelector('meta[name="last-modified"]');
+      if(meta) meta.setAttribute('content', lm);
+    })();
+
+    // Cookie consent handling
+    var COOKIE_KEY = 'libreapp_consent';
+    function showBanner(){
+      var b = document.getElementById('cookie-banner');
+      if(!localStorage.getItem(COOKIE_KEY)) b.style.display = 'flex';
+    }
+    function setConsent(granted){
+      try{ localStorage.setItem(COOKIE_KEY, granted? 'granted':'denied'); }catch(e){}
+      var state = granted? 'granted':'denied';
+      if(window.gtag) gtag('consent','update',{'analytics_storage': state});
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    document.getElementById('cookie-accept').addEventListener('click', function(){ setConsent(true); if(window.gtag) gtag('event','consent_given',{'method':'banner'}); });
+    document.getElementById('cookie-decline').addEventListener('click', function(){ setConsent(false); });
+    document.getElementById('cookie-close').addEventListener('click', function(){ setConsent(false); });
+    if(!localStorage.getItem(COOKIE_KEY)) setTimeout(showBanner,900);
+
+    // Download event helper
+    function handleDownload(fileName, fileUrl){
+      try{
+        if(window.gtag){
+          gtag('event','file_download', { event_category:'downloads', event_label:fileName, file_url:fileUrl });
+        }
+      }catch(e){}
+      window.open(fileUrl, '_blank', 'noopener');
+    }
+
+    // Show file size (best-effort; may be blocked by CORS)
+    (function(){
+      var url = 'https://de.libreoffice.org/donate/dl/win-x86_64/26.2.2/de/LibreOffice_26.2.2_Win_x86-64.msi';
+      fetch(url, {method:'HEAD', mode:'cors'}).then(function(r){
+        var len = r.headers.get('content-length');
+        var text = '—';
+        if(len){
+          var mb = (parseInt(len,10)/1024/1024).toFixed(1);
+          text = mb + ' MB';
+        }
+        var t1 = document.getElementById('file-size');
+        var t2 = document.getElementById('file-size-aside');
+        if(t1) t1.textContent = text;
+        if(t2) t2.textContent = text;
+      }).catch(function(){
+        var t1 = document.getElementById('file-size');
+        var t2 = document.getElementById('file-size-aside');
+        if(t1) t1.textContent = '—';
+        if(t2) t2.textContent = '—';
+      });
+    })();
+  </script>
+</body>
+</html>

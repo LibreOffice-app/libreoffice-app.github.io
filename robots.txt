@@ -1,0 +1,7 @@
+# robots.txt for https://libreoffice-app.github.io
+# Allow all crawlers and point to the XML sitemap.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://libreoffice-app.github.io/sitemap.xml

@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Fix LibreOffice Installation Errors on Windows — Troubleshooting (MSI)</title>
+  <meta name="description" content="Troubleshoot LibreOffice MSI install errors on Windows 11/10 (64‑bit). Quick fixes for common issues, clean installs, and safe re‑download of the official offline installer.">
+  <link rel="canonical" href="https://libreoffice-app.github.io/windows-installation-errors.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Fix LibreOffice Installation Errors on Windows (MSI, 64‑bit)">
+  <meta property="og:description" content="Step‑by‑step fixes for common LibreOffice MSI install issues on Windows 10/11. Safe, official offline installer download.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://libreoffice-app.github.io/windows-installation-errors.html">
+  <meta property="og:image" content="/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#18A303">
+  <meta name="last-modified" content="">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <style>
+    :root{
+      --brand:#18A303; /* LibreOffice-like green */
+      --brand-dark:#0f7c00;
+      --bg:#ffffff;
+      --muted:#6b7280;
+      --text:#0b0b0b;
+      --max-width:1100px;
+      --radius:12px;
+      --focus-outline:3px solid #111;
+    }
+    html,body{height:100%}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.5;color:var(--text);background:var(--bg)}
+    .container{max-width:var(--max-width);margin:0 auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+    .brand svg{width:42px;height:42px}
+    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:12px;flex-wrap:wrap}
+    nav a{color:var(--text);text-decoration:none;padding:8px 10px;border-radius:8px}
+    nav a:hover,nav a:focus{background:#f3f4f6;outline:none}
+    main{padding:18px 0}
+    h1{margin:0 0 8px 0;font-size:1.8rem}
+    .lead{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:3fr 1.4fr;gap:28px;align-items:start}
+    .card{background:#fff;border:1px solid #e6e6e6;padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(16,24,40,0.04)}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:10px;background:var(--brand);color:#fff;font-weight:600;border:0;cursor:pointer;text-decoration:none}
+    .btn.secondary{background:transparent;color:var(--brand);border:1px solid rgba(24,163,3,0.2)}
+    .btn:focus{outline:var(--focus-outline);outline-offset:3px}
+    .meta{color:var(--muted)}
+    .fixlist{margin:0;padding-left:18px}
+    .fixlist li{margin:6px 0}
+    .issue h2{margin:0 0 6px 0;font-size:1.15rem}
+    .issue .steps{margin:0;padding-left:18px;color:var(--muted)}
+    footer{margin-top:26px;padding:16px 0;border-top:1px solid #eee;color:var(--muted);font-size:0.9rem}
+    .badge{display:inline-block;background:#f0fdf4;color:var(--brand);padding:6px 10px;border-radius:999px;font-weight:600}
+    /* cookie banner */
+    .cookie-banner{position:fixed;left:12px;right:12px;bottom:12px;background:#fff;border:1px solid #ddd;padding:14px;border-radius:12px;display:flex;gap:12px;align-items:center;box-shadow:0 10px 30px rgba(2,6,23,0.08);z-index:9999}
+    .cookie-actions{margin-left:auto;display:flex;gap:8px}
+    .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+  </style>
+
+  <!-- SVG symbols -->
+  <svg aria-hidden="true" style="display:none">
+    <symbol id="icon-logo" viewBox="0 0 48 48">
+      <rect width="48" height="48" rx="8" fill="#18A303"></rect>
+      <path d="M14 31l20-14v12L14 31z" fill="#fff"></path>
+    </symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3v10m0 0l4-4m-4 4l-4-4M4 21h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M11 10h2v6h-2zM12 7.5a.9.9 0 110 1.8.9.9 0 010-1.8z" fill="currentColor"/></symbol>
+    <symbol id="icon-wrench" viewBox="0 0 24 24"><path d="M21 19l-5.5-5.5a5.5 5.5 0 11-2-2L19 3l2 2-5.5 5.5L21 19z" fill="currentColor"/></symbol>
+  </svg>
+
+  <!-- GA4 with default denied consent -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PDSRQT93TT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments)}
+    gtag('consent','default',{'analytics_storage':'denied'});
+    gtag('js', new Date());
+    gtag('config','G-PDSRQT93TT', { 'anonymize_ip': true });
+  </script>
+
+  <!-- JSON-LD: WebSite, Organization, Breadcrumb, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://libreoffice-app.github.io/#website",
+        "url": "https://libreoffice-app.github.io/",
+        "name": "LibreOffice App — Windows Downloads & Guides",
+        "publisher": { "@id": "https://libreoffice-app.github.io/#org" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://libreoffice-app.github.io/#org",
+        "name": "LibreOffice App",
+        "url": "https://libreoffice-app.github.io/",
+        "logo": "https://libreoffice-app.github.io/favicon.svg"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://libreoffice-app.github.io/"},
+          {"@type": "ListItem", "position": 2, "name": "Troubleshooting", "item": "https://libreoffice-app.github.io/windows-installation-errors.html"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"Another installation is in progress.","acceptedAnswer":{"@type":"Answer","text":"Restart Windows and try again. If it persists, open Services (services.msc), restart the Windows Installer service, and ensure no other MSI installs are running."}},
+          {"@type":"Question","name":"Error opening file for writing.","acceptedAnswer":{"@type":"Answer","text":"Close all office apps. Run the MSI as Administrator. Temporarily pause antivirus if it blocks the installer, then resume after install."}},
+          {"@type":"Question","name":"Insufficient privileges / access denied.","acceptedAnswer":{"@type":"Answer","text":"Right‑click the MSI and choose Install or run from an elevated Administrator account. Corporate policies may require IT assistance."}},
+          {"@type":"Question","name":"Installer failed or is corrupted.","acceptedAnswer":{"@type":"Answer","text":"Re‑download the official MSI and verify the file size. Avoid third‑party mirrors. Use the offline package for reliability."}}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="brand" href="index.html" aria-label="LibreOffice App home">
+        <svg width="42" height="42" aria-hidden="true"><use href="#icon-logo"></use></svg>
+        <div>
+          <strong>LibreOffice App</strong><br>
+          <span style="font-size:0.85rem;color:var(--muted)">Windows Downloads & Guides</span>
+        </div>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Download</a></li>
+          <li><a href="windows-install-guide.html">Install Guide</a></li>
+          <li><a href="windows-offline-installer.html">Offline Installer</a></li>
+          <li><a href="windows-installation-errors.html" aria-current="page">Troubleshooting</a></li>
+          <li><a href="libreoffice-vs-microsoft-office-windows.html">LibreOffice vs MS Office</a></li>
+          <li><a href="extensions-templates-windows.html">Extensions & Templates</a></li>
+          <li><a href="portable-windows.html">Portable</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Fix LibreOffice Installation Errors on Windows (MSI, 64‑bit)</h1>
+      <p class="lead">This page covers quick fixes for common MSI install issues on Windows 10 and Windows 11. You can also safely re‑download the official offline installer below.</p>
+
+      <div class="grid">
+        <section class="card">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+            <div class="meta">Installer: <code>LibreOffice_26.2.2_Win_x86-64.msi</code> • Size: <span id="file-size">—</span></div>
+            <div>
+              <a class="btn" href="https://de.libreoffice.org/donate/dl/win-x86_64/26.2.2/de/LibreOffice_26.2.2_Win_x86-64.msi" onclick="handleDownload('LibreOffice_26.2.2_Win_x86-64.msi','https://de.libreoffice.org/donate/dl/win-x86_64/26.2.2/de/LibreOffice_26.2.2_Win_x86-64.msi'); return false;">
+                <svg width="16" height="16" aria-hidden><use href="#icon-download"></use></svg>
+                Re‑download MSI (64‑bit)
+              </a>
+              <a class="btn secondary" href="https://www.libreoffice.org/download/download/" target="_blank" rel="noopener">Check latest releases</a>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:14px">
+            <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" style="color:var(--brand)"><use href="#icon-wrench"></use></svg><strong>Quick fixes</strong></div>
+            <ul class="fixlist meta">
+              <li>Restart Windows, then run the MSI as <strong>Administrator</strong>.</li>
+              <li>Close Microsoft Office, LibreOffice, and any app using office files.</li>
+              <li>Pause antivirus temporarily if it blocks installation; resume afterwards.</li>
+              <li>Ensure <strong>Windows Installer</strong> service is running (services.msc).</li>
+              <li>Free up disk space and delete any incomplete downloads, then re‑download the MSI.</li>
+            </ul>
+          </div>
+
+          <article style="margin-top:14px">
+            <div class="issue">
+              <h2>“Another installation is in progress”</h2>
+              <ul class="steps">
+                <li>Restart Windows to clear pending installs.</li>
+                <li>Open Services (Win+R → <code>services.msc</code>), restart <strong>Windows Installer</strong>.</li>
+                <li>Wait for Windows Update or other installers to finish before starting LibreOffice setup.</li>
+              </ul>
+            </div>
+
+            <div class="issue" style="margin-top:12px">
+              <h2>“Error opening file for writing”</h2>
+              <ul class="steps">
+                <li>Close all office apps and background updaters.</li>
+                <li>Right‑click the MSI → <strong>Install</strong> (admin)</li>
+                <li>Temporarily pause antivirus if it quarantines the installer, then resume after install.</li>
+              </ul>
+            </div>
+
+            <div class="issue" style="margin-top:12px">
+              <h2>Insufficient privileges / Access is denied</h2>
+              <ul class="steps">
+                <li>Use an Administrator account or run from an elevated Command Prompt.</li>
+                <li>If on a managed PC, contact IT — Group Policy may restrict MSI installs.</li>
+              </ul>
+            </div>
+
+            <div class="issue" style="margin-top:12px">
+              <h2>Installer failed or seems corrupted</h2>
+              <ul class="steps">
+                <li>Delete the old file and <a href="https://de.libreoffice.org/donate/dl/win-x86_64/26.2.2/de/LibreOffice_26.2.2_Win_x86-64.msi" onclick="handleDownload('LibreOffice_26.2.2_Win_x86-64.msi','https://de.libreoffice.org/donate/dl/win-x86_64/26.2.2/de/LibreOffice_26.2.2_Win_x86-64.msi'); return false;">re‑download the official MSI</a>.</li>
+                <li>Check the file size appears complete (see “Size” above).</li>
+                <li>Avoid third‑party sources; use official mirrors only.</li>
+              </ul>
+            </div>
+
+            <div class="issue" style="margin-top:12px">
+              <h2>Rolling back changes or stuck near 100%</h2>
+              <ul class="steps">
+                <li>Close open applications and try again.</li>
+                <li>Reboot into a clean boot (only Microsoft services), then run the MSI.</li>
+                <li>If upgrading, uninstall previous LibreOffice first, then install fresh.</li>
+              </ul>
+            </div>
+          </article>
+
+          <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn" href="https://de.libreoffice.org/donate/dl/win-x86_64/26.2.2/de/LibreOffice_26.2.2_Win_x86-64.msi" onclick="handleDownload('LibreOffice_26.2.2_Win_x86-64.msi','https://de.libreoffice.org/donate/dl/win-x86_64/26.2.2/de/LibreOffice_26.2.2_Win_x86-64.msi'); return false;">
+              <svg width="16" height="16" aria-hidden><use href="#icon-download"></use></svg>
+              Re‑download MSI (64‑bit)
+            </a>
+            <a class="btn secondary" href="windows-install-guide.html">View Install Guide</a>
+            <a class="btn secondary" href="windows-offline-installer.html">Offline Installer</a>
+          </div>
+        </section>
+
+        <aside class="card">
+          <h3 style="margin:0 0 6px 0">Useful tips</h3>
+          <p class="meta">Create a verbose install log for support:</p>
+          <pre class="meta" style="white-space:pre-wrap;background:#f9fafb;border:1px solid #eee;padding:10px;border-radius:10px">msiexec /i "LibreOffice_26.2.2_Win_x86-64.msi" /L*V install.log</pre>
+          <p class="meta">Then open <code>install.log</code> in a text editor to search for exact error messages.</p>
+          <hr style="border:none;border-top:1px solid #eee;margin:12px 0">
+          <p class="meta">Need help deciding? See <a href="libreoffice-vs-microsoft-office-windows.html">LibreOffice vs Microsoft Office</a>.</p>
+          <p class="meta">Looking for add‑ons? Explore <a href="extensions-templates-windows.html">extensions and templates</a>.</p>
+          <p class="meta">Portable edition? Go to <a href="portable-windows.html">Portable LibreOffice</a>.</p>
+          <p class="meta">File size: <span id="file-size-aside">—</span></p>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+          <span class="badge">Free & Open Source</span>
+          <span class="meta">Not affiliated with The Document Foundation. Links point to official LibreOffice servers.</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+          <div class="meta">&copy; <span id="year"></span> LibreOffice App — Hosted on GitHub Pages</div>
+          <div class="meta">Last updated: <time id="last-updated">—</time></div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Cookie banner -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent" style="display:none">
+    <div>
+      <strong>We respect your privacy</strong>
+      <div class="meta" style="margin-top:6px">This site uses minimal analytics to measure installs and improve the experience. You can accept or decline.</div>
+    </div>
+    <div class="cookie-actions">
+      <button id="cookie-accept" class="btn">Accept</button>
+      <button id="cookie-decline" class="btn secondary">Decline</button>
+      <button id="cookie-close" aria-label="Close cookie banner" class="btn" style="background:#eee;color:#111">Close</button>
+    </div>
+  </div>
+
+  <script>
+    // Footer dates and meta last-modified
+    document.getElementById('year').textContent = new Date().getFullYear();
+    (function(){
+      var lm = document.lastModified || new Date().toISOString().split('T')[0];
+      document.getElementById('last-updated').textContent = lm;
+      var meta = document.querySelector('meta[name="last-modified"]');
+      if(meta) meta.setAttribute('content', lm);
+    })();
+
+    // Cookie consent handling
+    var COOKIE_KEY = 'libreapp_consent';
+    function showBanner(){
+      var b = document.getElementById('cookie-banner');
+      if(!localStorage.getItem(COOKIE_KEY)) b.style.display = 'flex';
+    }
+    function setConsent(granted){
+      try{ localStorage.setItem(COOKIE_KEY, granted? 'granted':'denied'); }catch(e){}
+      var state = granted? 'granted':'denied';
+      if(window.gtag) gtag('consent','update',{'analytics_storage': state});
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    document.getElementById('cookie-accept').addEventListener('click', function(){ setConsent(true); if(window.gtag) gtag('event','consent_given',{'method':'banner'}); });
+    document.getElementById('cookie-decline').addEventListener('click', function(){ setConsent(false); });
+    document.getElementById('cookie-close').addEventListener('click', function(){ setConsent(false); });
+    if(!localStorage.getItem(COOKIE_KEY)) setTimeout(showBanner,900);
+
+    // Download event helper
+    function handleDownload(fileName, fileUrl){
+      try{
+        if(window.gtag){
+          gtag('event','file_download', { event_category:'downloads', event_label:fileName, file_url:fileUrl });
+        }
+      }catch(e){}
+      window.open(fileUrl, '_blank', 'noopener');
+    }
+
+    // Show file size (best-effort; may be blocked by CORS)
+    (function(){
+      var url = 'https://de.libreoffice.org/donate/dl/win-x86_64/26.2.2/de/LibreOffice_26.2.2_Win_x86-64.msi';
+      fetch(url, {method:'HEAD', mode:'cors'}).then(function(r){
+        var len = r.headers.get('content-length');
+        var text = '—';
+        if(len){
+          var mb = (parseInt(len,10)/1024/1024).toFixed(1);
+          text = mb + ' MB';
+        }
+        var t1 = document.getElementById('file-size');
+        var t2 = document.getElementById('file-size-aside');
+        if(t1) t1.textContent = text;
+        if(t2) t2.textContent = text;
+      }).catch(function(){
+        var t1 = document.getElementById('file-size');
+        var t2 = document.getElementById('file-size-aside');
+        if(t1) t1.textContent = '—';
+        if(t2) t2.textContent = '—';
+      });
+    })();
+  </script>
+</body>
+</html>
